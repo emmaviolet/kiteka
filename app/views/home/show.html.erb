@@ -6,10 +6,10 @@
     <div class="col-12 text-center">
       <%= button_to "<- No", { 
         :controller => 'answers',
+        :method => :put,
         :id => @answer.id,
         :response => "no"
       }, 
-      :method => :put,
       :class => "btn btn-primary col-6" %>
      <!--  <%= link_to "<- No", 
       answer_path(:id => @answer.id, :response => "no"), 
