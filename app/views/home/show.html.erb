@@ -4,10 +4,17 @@
     	<h1><%= @question.text %></h1>
     </div>
     <div class="col-12 text-center">
-      <%= link_to "<- No", 
+      <%= button_to "<- No", { 
+        :controller => 'answers',
+        :id => @practice_session.id,
+        :response => "no"
+      }, 
+      :method => :put,
+      :class => "btn btn-primary col-6" %>
+     <!--  <%= link_to "<- No", 
       answer_path(:id => @answer.id, :response => "no"), 
       :method => :put, 
-      :class => "btn btn-primary col-6" %>      
+      :class => "btn btn-primary col-6" %>       -->
       <%= link_to "Yes ->", 
       answer_path(:id => @answer.id, :response => "yes"), 
       :method => :put, 
