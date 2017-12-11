@@ -11,10 +11,6 @@
         :response => "no"
       }, 
       :class => "btn btn-primary col-6" %>
-     <!--  <%= link_to "<- No", 
-      answer_path(:id => @answer.id, :response => "no"), 
-      :method => :put, 
-      :class => "btn btn-primary col-6" %>       -->
 
       <%= button_to "Yes ->", { 
         :controller => "answers",
@@ -23,10 +19,6 @@
         :response => "yes"
       }, 
       :class => "btn btn-primary col-6" %>
-<!--       <%= link_to "Yes ->", 
-      answer_path(:id => @answer.id, :response => "yes"), 
-      :method => :put, 
-      :class => "btn btn-primary col-6" %> -->
     </div>
   </div>
   <div class="row">
