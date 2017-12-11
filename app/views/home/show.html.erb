@@ -6,8 +6,7 @@
     <div class="col-12 text-center">
       <%= button_to "<- No", { 
         :controller => "answers",
-        :action => "update",
-        :method => "put",
+        :action => "create",
         :id => @answer.id,
         :response => "no"
       }, 

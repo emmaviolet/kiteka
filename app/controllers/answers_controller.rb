@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
 
-	def update
+	def create
 		answer = Answer.find(params[:id])
 		answer.response = params[:response]
 		answer.submit_time = Time.now
