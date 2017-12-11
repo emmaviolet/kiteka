@@ -6,11 +6,11 @@
     <div class="col-12 text-center">
       <%= link_to "<- No", 
       answer_path(:id => @answer.id, :response => "no"), 
-      :method => "put", 
+      :method => :put, 
       :class => "btn btn-primary col-6" %>      
       <%= link_to "Yes ->", 
       answer_path(:id => @answer.id, :response => "yes"), 
-      :method => "put", 
+      :method => :put, 
       :class => "btn btn-primary col-6" %>
     </div>
   </div>
