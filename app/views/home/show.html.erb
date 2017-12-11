@@ -9,8 +9,8 @@
       :method => :put, 
       :class => "btn btn-primary col-6" %>      
       <%= link_to "Yes ->", 
-      {:controller => 'answers', :action => 'update', :id => @answer.id, :response => "yes"},
-      {:method => :put, :remote => true},
+      {:controller => 'answers', :action => 'update', :id => @answer.id},
+      {:method => :put, :remote => true, :response => "yes"},
       :class => "btn btn-primary col-6" %>
     </div>
   </div>
