@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
-	def index
-		render nothing: true, status: :ok, content_type: "text/html"
+	def show
+		@image = Image.first
+		@question = Question.first
 	end
 end

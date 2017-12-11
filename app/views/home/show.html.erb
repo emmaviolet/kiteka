@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="row">
+    <div class="col-12 text-center">
+    	<h1><%= @question.text %></h1>
+    </div>
+    <div class="col-12 text-center">
+      <%= link_to "<- No", answers_path(:question_id => @question.id, :image_id => @image.id, :answer => "no"), :method => "post", :class => "btn btn-primary col-6" %>
+      <%= link_to "Yes ->", answers_path(:question_id => @question.id, :image_id => @image.id, :answer => "yes"), :method => "post", :class => "btn btn-primary col-6" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+    	<%= image_tag(@image.path, class: "img-responsive", alt: "goats") %>
+    </div>
+  </div>
+</div>
