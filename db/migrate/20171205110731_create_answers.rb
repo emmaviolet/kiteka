@@ -3,6 +3,7 @@ class CreateAnswers < ActiveRecord::Migration[5.1]
     create_table :answers, id: :uuid do |t|
     	t.datetime :start_time
     	t.datetime :submit_time
+    	t.text :response
 
     	t.belongs_to :question, index: true
     	t.belongs_to :image, index: true

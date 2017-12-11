@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20171205112125) do
   create_table "answers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "submit_time"
+    t.text "response"
     t.bigint "question_id"
     t.bigint "image_id"
     t.bigint "user_id"
