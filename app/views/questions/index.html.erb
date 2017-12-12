@@ -1,0 +1,17 @@
+<div class="container-fluid">
+	<div class="row">
+    <div class="col-12 text-center">
+    	<h1>Add / delete questions</h1>
+    </div>
+    <% @questions.each do |question| %>
+    <%= question.text %>
+    <%= link_to 'Delete',  question,  method: :delete, class: "btn btn-primary col-6" %>
+    <br><br>
+    <% end %>
+
+    <%= form_for :question, url: "/questions", method: "post" do |f| %>
+        <%= f.text_field :text %>
+        <%= f.submit "Create" %>
+    <% end %>
+  </div>
+</div>
