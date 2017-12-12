@@ -7,7 +7,9 @@
       <%= button_to "<- No", { 
         :controller => "answers",
         :action => "create",
-        :id => @answer.id,
+        :image_id => @image,
+        :question_id => @question,
+        :start_time => @start_time,
         :response => "no"
       }, 
       :class => "btn btn-primary col-6" %>
@@ -15,7 +17,9 @@
       <%= button_to "Yes ->", { 
         :controller => "answers",
         :action => "create",
-        :id => @answer.id,
+        :image_id => @image,
+        :question_id => @question,
+        :start_time => @start_time,
         :response => "yes"
       }, 
       :class => "btn btn-primary col-6" %>
