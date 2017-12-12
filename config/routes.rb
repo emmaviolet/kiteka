@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 	root to: "home#show"
 
 	resources :answers, only: [:create]
+	resources :admin, only: [:index]
 end
