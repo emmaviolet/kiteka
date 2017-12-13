@@ -1,6 +1,5 @@
 class Image < ApplicationRecord
 	has_many :answers, dependent: :destroy
-	mount_uploader :path, AvatarUploader
 
 	def mark_if_completed
 		users_completed = users.select { |user| self.completed_by_user?(user) }
