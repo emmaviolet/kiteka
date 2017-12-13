@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
 	before_action :authenticate_user_as_admin!
 
-	ADMIN_EMAILS = ['hephzi@kiteka.com']
+	ADMIN_EMAILS = ['hephzi@kiteka.com', 'emmavioletmakinson@gmail.com']
 
 	def index
 		@questions = Question.all
