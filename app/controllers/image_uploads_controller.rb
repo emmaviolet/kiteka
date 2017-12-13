@@ -3,10 +3,22 @@ class ImageUploadsController < AdminController
 	before_action :set_s3_direct_post, only: [:create]
 
   def create
-  	Rails.logger.info("******** --> ")
+  	Rails.logger.info("******** --> params ")
   	Rails.logger.info(params)
 
-  	params[:images]['avatar'].each do |avatar|
+  	upload = params[:image_upload]
+  	Rails.logger.info("******** --> upload ")
+  	Rails.logger.info(upload)
+
+  	images = upload[:images]
+  	Rails.logger.info("******** --> images ")
+  	Rails.logger.info(images)
+
+  	avatars = images['avatar']
+  	Rails.logger.info("******** --> avatar ")
+  	Rails.logger.info(avatars)
+
+  	avatars.each do |avatar|
   		if avatar.is_a? String
     		Rails.logger.info('AVATAR ******** --> ' + avatar)
       		@image = Image.create!(:path => avatar)
