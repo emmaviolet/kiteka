@@ -31,6 +31,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'jquery-rails'
+gem 'rails_12factor'
 
 gem 'aws-sdk', '~> 2'
 # Use Redis adapter to run Action Cable in production
