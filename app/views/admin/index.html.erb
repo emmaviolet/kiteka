@@ -39,7 +39,7 @@
         <div class="col-6 text-center">
             <h1>Add user screenshots</h1>
         </div>
-        <%= form_for :image_upload, url: "/image_uploads", method: "post", html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
+        <%= form_for :image_upload, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
         <%= f.fields_for :images do |p| %>
             <div class="field">
                 <%= p.label :files %><br>
