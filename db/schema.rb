@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20171212172154) do
     t.datetime "start_time"
     t.datetime "submit_time"
     t.text "response"
-    t.bigint "question_id"
-    t.bigint "image_id"
-    t.bigint "user_id"
+    t.uuid "question_id"
+    t.uuid "image_id"
+    t.uuid "user_id"
     t.index ["image_id"], name: "index_answers_on_image_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20171212172154) do
 
   create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "path"
+    t.boolean "completed"
   end
 
   create_table "questions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

@@ -33,3 +33,23 @@
     <% end %>
   </div>
 </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-center">
+            <h1>Add user screenshots</h1>
+        </div>
+        <%= form_for :image_upload, url: "/image_uploads", method: "post" do |f| %>
+        <%= f.fields_for :images do |p| %>
+            <div class="field">
+                <%= p.label :files %><br>
+                <%= p.file_field :file, :multiple => true, name: "images[file][]" %>
+            </div>
+        <% end %>
+
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+        <% end %>
+    </div>
+</div>

@@ -7,15 +7,17 @@ class User < ApplicationRecord
     has_many :answers, dependent: :destroy
 
   	def next_image
-  		image_queue.first
+  		# get rid of image queue as it's quite work-intensive
+  		# image_queue.first
+  		available_images.find { |image| !image.completed_by_user?(self) }
 	end
 
-	def image_queue
-		available_images.select { |image| !image.completed_by_user?(self) }
-	end
+	# def image_queue
+	# 	available_images.select { |image| !image.completed_by_user?(self) }
+	# end
 
 	def available_images
-		images.reject(&:completed?)
+		images.reject { |image| image.completed }
 	end
 
 	def images

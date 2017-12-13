@@ -29,12 +29,6 @@ questions = Question.create([
 	{ text: "Do they like parties?" }
 ])
 
-images = Image.create([
-	{ path: "https://timedotcom.files.wordpress.com/2017/07/cow-army.jpg" },
-	{ path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hausziege_04.jpg/1200px-Hausziege_04.jpg" },
-	{ path: "https://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg" },
-])
-
 allowed_users = AllowedUser.create([
 	{ email: "lubowarashidah1@gmail.com" },
 	{ email: "nambafusalamah590@gmail.com" },
@@ -49,4 +43,5 @@ allowed_users = AllowedUser.create([
 	{ email: "hephzi@kiteka.com" },
 	{ email: "nitishah@kiteka.com" },
 	{ email: "bethy@kiteka.com" },
+	{ email: "emmavioletmakinson@gmail.com" },
 ])

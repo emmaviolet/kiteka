@@ -1,10 +1,10 @@
 class Image < ApplicationRecord
 	has_many :answers, dependent: :destroy
+	mount_uploader :path, AvatarUploader
 
-	def completed?
-		# have two users completed all questions
+	def mark_if_completed
 		users_completed = users.select { |user| self.completed_by_user?(user) }
-		users_completed.count > 1
+		self.completed = users_completed.count > 1
 	end
 
 	def completed_by_user?(user)
@@ -18,12 +18,12 @@ class Image < ApplicationRecord
 	def unanswered_questions_for_user(user)
 		questions.select do |question|
 			question_answers = self.answers.where(user_id: user.id, question_id: question.id)
-
-			# completed answer shouldn't really be necessary any more but a useful check
-			completed_answer = question_answers.map(&:response).reject(&:blank?).any?
-
-			question_answers.empty? || !completed_answer
+			question_answers.empty?
 		end
+	end
+
+	def last_question
+		questions.last
 	end
 
 	def questions

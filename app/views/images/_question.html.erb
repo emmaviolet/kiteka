@@ -1,0 +1,47 @@
+<% @questions.each do |question| %>
+	<% if question == @questions.first %>
+		<div id="question_<%= @questions.index(question) %>" class="question_div">
+	<% else %>
+		<div id="question_<%= @questions.index(question) %>" class="question_div", hidden="true">
+	<% end %>
+	<div class="row col-12 text-center">
+		<h1><%= question.text %></h1>
+	</div>
+	<div class="row col-12 text-center">
+		<button class="btn btn-primary col-3", id="question_<%= @questions.index(question) %>_back">^ Back</button>
+
+		<%= button_to "<- No", { 
+			:controller => "answers",
+			:action => "create",
+			:image_id => @image,
+			:question_id => question,
+			:start_time => @start_time,
+			:response => "no"
+		}, 
+		:class => "btn btn-primary input-btn-primary col-3", 
+		:id => "question_#{@questions.index(question)}_no" %>
+
+		<%= button_to "Yes ->", { 
+			:controller => "answers",
+			:action => "create",
+			:image_id => @image,
+			:question_id => question,
+			:start_time => @start_time,
+			:response => "yes"
+		}, 
+		:class => "btn btn-primary input-btn-primary col-3", 
+		:id => "question_#{@questions.index(question)}_yes" %>
+
+		<%= button_to "Uncertain v", { 
+			:controller => "answers",
+			:action => "create",
+			:image_id => @image,
+			:question_id => question,
+			:start_time => @start_time,
+			:response => "uncertain"
+		}, 
+		:class => "btn btn-primary input-btn-primary col-3", 
+		:id => "question_#{@questions.index(question)}_uncertain" %>
+	</div>
+	</div>
+<% end %>
