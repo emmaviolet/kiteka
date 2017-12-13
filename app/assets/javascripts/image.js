@@ -73,6 +73,8 @@ $(document).ready(function(){
         // create hidden field
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
         form.append(input);
+
+        console.log(form);
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);
