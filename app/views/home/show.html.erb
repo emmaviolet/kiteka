@@ -1,9 +1,8 @@
 <div class="container-fluid">
-	<div class="row">
-    <div class="col-12 text-center">
+    <div class="row col-12 text-center">
     	<h1><%= @question.text %></h1>
     </div>
-    <div class="col-12 text-center">
+    <div class="row col-12 text-center">
       <%= button_to "<- No", { 
         :controller => "answers",
         :action => "create",
@@ -12,7 +11,17 @@
         :start_time => @start_time,
         :response => "no"
       }, 
-      :class => "btn btn-primary col-6" %>
+      :class => "btn btn-primary col-3 pull-left" %>
+
+      <%= button_to "Uncertain", { 
+        :controller => "answers",
+        :action => "create",
+        :image_id => @image,
+        :question_id => @question,
+        :start_time => @start_time,
+        :response => "uncertain"
+      }, 
+      :class => "btn btn-primary col-3" %>
 
       <%= button_to "Yes ->", { 
         :controller => "answers",
@@ -22,12 +31,9 @@
         :start_time => @start_time,
         :response => "yes"
       }, 
-      :class => "btn btn-primary col-6" %>
+      :class => "btn btn-primary col-3 pull-right" %>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
+    <div class="row col-12">
     	<%= image_tag(@image.path, class: "img-responsive", alt: "goats") %>
     </div>
-  </div>
 </div>
