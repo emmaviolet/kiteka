@@ -71,7 +71,7 @@ $(document).ready(function(){
         var url   = '//' + form.data('host') + '/' + key;
 
         // create hidden field
-        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
+        var input = $("<input />", { type:'hidden', name: 'aws_path', value: url })
         form.append(input);
 
         console.log(form);
