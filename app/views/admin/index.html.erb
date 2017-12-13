@@ -43,7 +43,7 @@
         <%= f.fields_for :images do |p| %>
             <div class="field">
                 <%= p.label :files %><br>
-                <%= p.file_field :file, :multiple => true, name: "images[file][]" %>
+                <%= p.file_field :avatar, :multiple => true %>
             </div>
         <% end %>
 
