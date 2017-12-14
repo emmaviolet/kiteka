@@ -21,7 +21,7 @@ class AdminController < ApplicationController
 		@csv_string = CSV.generate do |csv|
 			csv << ['image', 'question', 'user', 'response', 'start_time', 'submit_time']
 
-			Answer.all.sort(:submit_time).each do |answer|
+			Answer.all.sort_by(&:submit_time).each do |answer|
 				image = answer.image.path.split('/').last
 				question = answer.question.text
 				user = answer.user.email
