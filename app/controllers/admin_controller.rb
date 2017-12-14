@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 	before_action :authenticate_user_as_admin!
 	before_action :set_s3_direct_post, only: [:index]
 
-	ADMIN_EMAILS = ['hephzi@kiteka.com', 'emmavioletmakinson@gmail.com']
+	ADMIN_EMAILS = ['hephzi@kiteka.com', 'emmavioletmakinson@gmail.com', 'Liam@goddard.co.uk']
 
 	def index
 		@questions = Question.all
