@@ -18,7 +18,6 @@ $(document).ready(function(){
 
   	var buttonGroups = $(".input-btn-primary:visible").each(function(index) {
     	var formActions = $( this )[0].form['action'].split('&');
-    	console.log($( this )[0].form['action']);
     	
     	var now = new Date();
 		var isoString = now.toISOString();
@@ -26,8 +25,6 @@ $(document).ready(function(){
     	formActions[3] = "start_time=" + isoString;
     	var newForm = formActions.join('&');
     	$( this )[0].form['action'] = newForm;
-
-    	console.log($( this )[0].form['action']);
   	});
   });
 
@@ -73,8 +70,6 @@ $(document).ready(function(){
         // create hidden field
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
         form.append(input);
-
-        console.log(form);
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);

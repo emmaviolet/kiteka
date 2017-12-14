@@ -6,7 +6,6 @@ class ImageUploadsController < AdminController
   	images = params[:image_upload][:images]['avatar']
   	images.each do |avatar|
   		if avatar.is_a? String
-    		Rails.logger.info('AVATAR ******** --> ' + avatar)
       		@image = Image.create!(:path => avatar)
       	end
     end
