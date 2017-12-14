@@ -1,3 +1,5 @@
+require 'csv'
+
 class AdminController < ApplicationController
 	before_action :authenticate_user_as_admin!
 	before_action :set_s3_direct_post, only: [:index]
