@@ -18,8 +18,8 @@ class AdminController < ApplicationController
 	end
 
 	def download_data
-		@csv_string = CSV.generate do |csv|
-			csv << ['image', 'question', 'user', 'response', 'start_time', 'submit_time']
+		CSV.open("data.csv", "w+") do |csv|
+  			csv << ['image', 'question', 'user', 'response', 'start_time', 'submit_time']
 
 			Answer.all.sort_by(&:submit_time).each do |answer|
 				image = answer.image.path.split('/').last
@@ -32,7 +32,7 @@ class AdminController < ApplicationController
 			end
 		end
 
-		send_file(@csv_string)
+		send_file("data.csv", filename: "data.csv", type: 'text/csv; charset=iso-8859-1; header=present')
 	end
 
 	def set_s3_direct_post
