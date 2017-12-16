@@ -7,8 +7,8 @@
 	<div class="row col-12 text-center">
 		<h1><%= question.text %></h1>
 	</div>
-	<div class="row col-12 text-center">
-		<button class="btn btn-primary col-3", id="question_<%= @questions.index(question) %>_back">^ Back</button>
+	<div class="btn-group" role="group">
+  		<button class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</button>
 
 		<%= button_to "<- No", { 
 			:controller => "answers",
@@ -18,7 +18,7 @@
 			:start_time => @start_time,
 			:response => "no"
 		}, 
-		:class => "btn btn-primary input-btn-primary col-3", 
+		:class => "btn btn-primary input-btn-primary", 
 		:id => "question_#{@questions.index(question)}_no" %>
 
 		<%= button_to "Yes ->", { 
@@ -29,7 +29,7 @@
 			:start_time => @start_time,
 			:response => "yes"
 		}, 
-		:class => "btn btn-primary input-btn-primary col-3", 
+		:class => "btn btn-primary input-btn-primary", 
 		:id => "question_#{@questions.index(question)}_yes" %>
 
 		<%= button_to "Uncertain v", { 
@@ -40,8 +40,7 @@
 			:start_time => @start_time,
 			:response => "uncertain"
 		}, 
-		:class => "btn btn-primary input-btn-primary col-3", 
+		:class => "btn btn-primary input-btn-primary", 
 		:id => "question_#{@questions.index(question)}_uncertain" %>
-	</div>
 	</div>
 <% end %>
