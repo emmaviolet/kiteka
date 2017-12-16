@@ -7,10 +7,48 @@
 	<div class="row col-12 text-center">
 		<h1><%= question.text %></h1>
 	</div>
-	<div class="btn-group" role="group">
-		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
-		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
-		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
-		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
+	<div class="btn-group row col-12 text-center" role="group">
+		<div style="float:left;">
+  		<button class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</button>
+  		</div>
+
+  		<div style="float:left;">
+		<%= button_to "<- No", { 
+			:controller => "answers",
+			:action => "create",
+			:image_id => @image,
+			:question_id => question,
+			:start_time => @start_time,
+			:response => "no"
+		}, 
+		:class => "btn btn-primary input-btn-primary", 
+		:id => "question_#{@questions.index(question)}_no" %>
+		</div>
+
+		<div style="float:left;">
+		<%= button_to "Yes ->", { 
+			:controller => "answers",
+			:action => "create",
+			:image_id => @image,
+			:question_id => question,
+			:start_time => @start_time,
+			:response => "yes"
+		}, 
+		:class => "btn btn-primary input-btn-primary", 
+		:id => "question_#{@questions.index(question)}_yes" %>
+		</div>
+
+		<div style="float:left;">
+		<%= button_to "Uncertain v", { 
+			:controller => "answers",
+			:action => "create",
+			:image_id => @image,
+			:question_id => question,
+			:start_time => @start_time,
+			:response => "uncertain"
+		}, 
+		:class => "btn btn-primary input-btn-primary", 
+		:id => "question_#{@questions.index(question)}_uncertain" %>
+		</div>
 	</div>
 <% end %>
