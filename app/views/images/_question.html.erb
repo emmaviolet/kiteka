@@ -26,7 +26,7 @@
   		<button class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</button>
   		</div>
 
-		<div style="float:right;" class="col-2">
+		<div style="float:left;" class="col-2">
 		<%= button_to "Uncertain v", { 
 			:controller => "answers",
 			:action => "create",
@@ -39,7 +39,7 @@
 		:id => "question_#{@questions.index(question)}_uncertain" %>
 		</div>
 
-		<div style="float:right;" class="col-2">
+		<div style="float:left;" class="col-2">
 		<%= button_to "Yes ->", { 
 			:controller => "answers",
 			:action => "create",
