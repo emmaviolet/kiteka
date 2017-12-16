@@ -7,8 +7,8 @@
 	<div class="row col-12 text-center">
 		<h1><%= question.text %></h1>
 	</div>
-	<div class="btn-group text-center" role="group" style="text-align:center; margin: auto; display:inline-block">
-		<div style="float:left;">
+	<div class="btn-group text-center" role="group" style="text-align:center; margin: auto">
+		<div style="display:inline-block">
 		<%= button_to "<- No", { 
 			:controller => "answers",
 			:action => "create",
@@ -21,11 +21,11 @@
 		:id => "question_#{@questions.index(question)}_no" %>
 		</div>
 
-		<div style="float:left;">
+		<div style="display:inline-block">
   		<button class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</button>
   		</div>
 
-		<div style="float:left;">
+		<div style="display:inline-block">
 		<%= button_to "Uncertain v", { 
 			:controller => "answers",
 			:action => "create",
@@ -38,7 +38,7 @@
 		:id => "question_#{@questions.index(question)}_uncertain" %>
 		</div>
 
-		<div style="float:left;">
+		<div style="display:inline-block">
 		<%= button_to "Yes ->", { 
 			:controller => "answers",
 			:action => "create",
