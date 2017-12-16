@@ -8,39 +8,9 @@
 		<h1><%= question.text %></h1>
 	</div>
 	<div class="btn-group" role="group">
-  		<button class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</button>
-
-		<%= button_to "<- No", { 
-			:controller => "answers",
-			:action => "create",
-			:image_id => @image,
-			:question_id => question,
-			:start_time => @start_time,
-			:response => "no"
-		}, 
-		:class => "btn btn-primary input-btn-primary", 
-		:id => "question_#{@questions.index(question)}_no" %>
-
-		<%= button_to "Yes ->", { 
-			:controller => "answers",
-			:action => "create",
-			:image_id => @image,
-			:question_id => question,
-			:start_time => @start_time,
-			:response => "yes"
-		}, 
-		:class => "btn btn-primary input-btn-primary", 
-		:id => "question_#{@questions.index(question)}_yes" %>
-
-		<%= button_to "Uncertain v", { 
-			:controller => "answers",
-			:action => "create",
-			:image_id => @image,
-			:question_id => question,
-			:start_time => @start_time,
-			:response => "uncertain"
-		}, 
-		:class => "btn btn-primary input-btn-primary", 
-		:id => "question_#{@questions.index(question)}_uncertain" %>
+		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
+		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
+		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
+		<a href="#" class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</a>
 	</div>
 <% end %>
