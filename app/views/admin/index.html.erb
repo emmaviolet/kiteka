@@ -9,7 +9,7 @@
     </div>
     <% @questions.each do |question| %>
     <%= question.text %>
-    <%= link_to 'Delete',  question,  method: :delete, class: "btn btn-primary col-6" %>
+    <%= link_to 'Delete',  "/questions/#{question.id}",  method: :delete, class: "btn btn-primary col-6" %>
     <br><br>
     <% end %>
 
@@ -27,7 +27,7 @@
     </div>
     <% @allowed_users.each do |allowed_user| %>
     <%= allowed_user.email %>
-    <%= link_to 'Delete',  :allowed_user,  class: "btn btn-primary col-6" %>
+    <%= link_to 'Delete',  "/allowed_users/#{allowed_user.id}",  class: "btn btn-primary col-6" %>
     <br><br>
     <% end %>
 
