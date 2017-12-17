@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 	resources :answers, only: [:create]
 	resources :admin, only: [:index]
 	resources :image_uploads
-	resources :questions, only: [:create, :destroy]
-	resources :allowed_users, only: [:create, :destroy]
+	resources :questions, only: [:create, :show]
+	resources :allowed_users, only: [:create, :show]
 end
