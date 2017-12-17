@@ -8,7 +8,8 @@ class QuestionsController < AdminController
 		redirect_to questions_path
 	end
 
-	def destroy
+	# because delete method does not work
+	def show
 		question = Question.find(params[:id])
 		question.delete
 

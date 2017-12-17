@@ -9,7 +9,8 @@ class AllowedUsersController < AdminController
 		redirect_to admin_index_path
 	end
 
-	def destroy
+	# because delete method does not work
+	def show
 		allowed_user = AllowedUser.find(params[:id])
 		allowed_user.delete
 
