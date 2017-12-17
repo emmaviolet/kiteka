@@ -27,7 +27,7 @@
     </div>
     <% @allowed_users.each do |allowed_user| %>
     <%= allowed_user.email %>
-    <%= link_to 'Delete',  allowed_user,  method: :delete, class: "btn btn-primary col-6" %>
+    <%= link_to 'Delete',  "/allowed_users/#{allowed_user.id}/delete",  method: :delete, class: "btn btn-primary col-6" %>
     <br><br>
     <% end %>
 
