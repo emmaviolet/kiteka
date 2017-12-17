@@ -21,6 +21,6 @@ class User < ApplicationRecord
 	end
 
 	def images
-		Image.all.sort_by(&:id)
+		Image.all
 	end
 end

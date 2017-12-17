@@ -3,7 +3,8 @@ class AllowedUsersController < AdminController
 	def create
 		attributes = params[:allowed_user]
 		user_attributes = attributes.permit(:email)
-		AllowedUser.create!(user_attributes)
+
+		AllowedUser.create!(email: user_attributes[:email].downcase)
 
 		redirect_to admin_index_path
 	end

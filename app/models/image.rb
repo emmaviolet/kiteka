@@ -26,10 +26,10 @@ class Image < ApplicationRecord
 	end
 
 	def questions
-		Question.all.sort_by(&:id)
+		Question.all
 	end
 
 	def users
-		User.all.sort_by(&:id)
+		User.all
 	end
 end
