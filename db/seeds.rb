@@ -2948,4 +2948,5 @@ image_urls = [
 'http://adducore.com/kiteka/screenshots/___mandii__201801141126.jpg',
 ]
 
+Image.destroy_all
 image_urls.each { |url| Image.create(path: url) }
