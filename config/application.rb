@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -13,8 +15,8 @@ module Kiteka
     config.serve_static_assets = true
 
     config.generators do |g|
-  		g.orm :active_record, primary_key_type: :uuid
-	end
+      g.orm :active_record, primary_key_type: :uuid
+    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -27,7 +27,7 @@
     </div>
     <% @allowed_users.each do |allowed_user| %>
     <%= allowed_user.email %>
-    <%= link_to 'Delete',  "/allowed_users/#{allowed_user.id}",  class: "btn btn-primary col-6" %>
+    <%= link_to 'Delete',  "/allowed_users/#{allowed_user.id}", class: "btn btn-primary col-6" %>
     <br><br>
     <% end %>
 
@@ -36,24 +36,10 @@
         <%= f.submit "Create" %>
     <% end %>
   </div>
-</div>
+</div><br><br>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-6 text-center">
-            <h1>Add user screenshots</h1>
-        </div>
-        <%= form_for :image_upload, url: "/image_uploads", method: "post", html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
-        <%= f.fields_for :images do |p| %>
-            <div class="field">
-                <%= p.label :files %><br>
-                <%= p.file_field :avatar, :multiple => true %>
-            </div>
-        <% end %>
-
-        <div class="actions">
-            <%= f.submit %>
-        </div>
-        <% end %>
+        <%= link_to 'Pull latest from S3 bucket',  "/image_uploads",  class: "btn btn-primary col-6" %>
     </div>
 </div>

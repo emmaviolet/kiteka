@@ -1,14 +1,18 @@
+# frozen_string_literal: true
+
 class ImageUploadsController < AdminController
+  def index
+    s3_bucket_path = "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com/"
 
-	before_action :set_s3_direct_post, only: [:create]
+    response = HTTParty.get(s3_bucket_path).parsed_response
+    contents = response['ListBucketResult']['Contents']
 
-  def create
-  	images = params[:image_upload][:images]['avatar']
-  	images.each do |avatar|
-  		if avatar.is_a? String
-      		@image = Image.create!(:path => avatar)
-      	end
+    image_paths = contents.map { |content| s3_bucket_path + content['Key'] }
+
+    image_paths.each do |image_path|
+      Image.find_or_create_by(path: image_path)
     end
+
     redirect_to admin_index_path
   end
 end
