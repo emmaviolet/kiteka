@@ -23,7 +23,7 @@
 
 		<div style="display:inline-block">
   		<button class="btn btn-primary", id="question_<%= @questions.index(question) %>_back">^ Back</button>
-  		</div>
+  	</div>
 
 		<div style="display:inline-block">
 		<%= button_to "Uncertain v", { 
@@ -53,3 +53,9 @@
 	</div>
 	</div>
 <% end %>
+
+<div id="question_<%= @questions.count %>" class="question_div", hidden="true">
+	<div class="text-center" style="text-align:center; margin: auto">
+		<%= link_to "Next image", root_path, class: "btn btn-primary" %>
+	</div>
+</div>

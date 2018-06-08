@@ -5,7 +5,7 @@ class ImageUploadsController < AdminController
     s3_bucket_path = "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com/"
 
     response = HTTParty.get(s3_bucket_path).parsed_response
-    contents = response['ListBucketResult']['Contents']
+    contents = response['ListBucketResult']['Contents'].select { |content| content['Size'].to_i != 0 }
 
     image_paths = contents.map { |content| s3_bucket_path + content['Key'] }
 
